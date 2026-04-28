@@ -1,0 +1,24 @@
+#printing numbers upto 10.(default it starts from 0 and ends at 9)
+for i in range(10):
+    print(i)
+print("-----------------------------")
+#prints numbers from 10 to 20 by including 10 and excluding 20 i.e upto 19
+for i in range(10,20):
+    print(i)
+
+print("---------------------")
+#printing numbers from 10 to 20 using a step count of 3 .
+for i in range(10,20,3):
+    print(i)
+
+print("----------------")
+#prints numbers starting from 100 upto 10 ,each time decrementing by  -10
+for i in range(100,10,-10):
+    print(i)
+
+print("------------")
+#prints "ACECOLLEGE" in one line with "->" symbol inbetween each character.
+#"end" is used to print the next statement also in same line ,instead of going to next line.
+# Because by default,after every print statement,the console goes to next line
+for i in "ACECOLLEGE":
+    print(i,end="->")
