@@ -1,0 +1,7 @@
+import calendar
+a=int(input("enter the year: "))
+res=calendar.calendar(a)
+print(res)
+b=int(input("enter month:"))
+res1=calendar.month(a,b)
+print(res1)
