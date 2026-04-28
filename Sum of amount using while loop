@@ -1,0 +1,7 @@
+sum=0
+while(True):   #since the condition is true,it will execute infinite number of times
+    a=int(input("Enter amount in Rs: "))
+    sum=sum+a
+    if a==0:
+        break
+print("Total sum: ",sum)
