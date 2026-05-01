@@ -1,5 +1,5 @@
 import time
-print("\033[1;33m")
+print("\033[1;33m")  #colour codes
 for i in range(1,11):
     for j in range(1,11):
         time.sleep(1)    #prints each value after 1 second
