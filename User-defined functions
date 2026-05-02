@@ -1,0 +1,20 @@
+def a1():   #without return type and without arguments
+    n1=10
+    n2=20
+    print(n1+n2)
+def a2(a,b):  #without return type and with arguments
+    print(a+b)
+def a3():  #with return type and without arguments
+    a=100
+    b=200
+    return a+b
+def a4(a,b): #with return type and with arguments
+    return a+b
+
+#function calling
+a1()
+a2(100,200)
+res=a3()
+print(res)
+res1=a4(100,20)
+print(res1)
