@@ -1,0 +1,15 @@
+#module:Qrcode
+#in-built functions:
+#1.QRCode()
+#2.add_data()
+#3.make()
+#4.make_image()
+#5.save
+import qrcode
+qr=qrcode.QRCode()  #QRCode is a class in module/library of qrcode,that is used to create a new qr code 
+a="TVK is rocking"
+qr.add_data(a)
+qr.make(fit=True)   #based on given data,we are saying to give the smallest size of qrcode that fits the data perfectly.
+res=qr.make_image(fill_color="black",back_color="white")
+res.save("POUSHYA.png")
+print("Created poushyaa")
