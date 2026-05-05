@@ -1,0 +1,15 @@
+#defining a class
+class abc:
+    msg="Good Morning"  #class variable
+    def set_dim(self,a,b): #a,b are local variables,i.e. they can be accessed only inside "self_dim" function
+        self.tot=a+b   #instance variable (it can be accessed inside any method)
+    def display(self):
+        print("The sum is ",self.tot)
+        print(abc.msg)  
+#creating object and methods 
+a=abc()
+a2=abc()
+a.set_dim(40,50)
+a2.set_dim(20,30)
+a.display()
+a2.display()
