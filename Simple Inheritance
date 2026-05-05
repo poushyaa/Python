@@ -1,0 +1,13 @@
+class INDIA:
+    def show_info(self):
+        print("Delhi")
+class Telangana(INDIA):
+    def chiefminister(self):
+        print("Revanth Reddy")
+
+a=INDIA()
+a.show_info()
+b=Telangana()
+b.chiefminister()
+b.show_info()
+#a.chiefminister() gives an error because it is not accessing the information from Telangana and it is a parent class
