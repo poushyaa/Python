@@ -1,0 +1,21 @@
+#for i in 120:   #cannot traverse through int,we need to convert to string i.e. "120"
+ #   print(i)
+
+b="".join(i for i in "ACE COLL" if i in "AEIOU")
+print(b)
+
+a=[i for i in range(10)]
+print(a)
+
+
+a=[2,3,4]
+b=(2,3,4)
+c={2,3,4}
+a=a.append(18)
+print(a)
+b=b+(5,)
+print(b)
+c=c.add(17)
+print(c)
+
+
