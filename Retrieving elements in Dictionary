@@ -1,0 +1,16 @@
+#Dictionary
+a={'name':'poushya','age':21,'marks':45}
+for i in a.items():
+    print(i)
+print("--------------------")
+for i in a.keys():
+    print(i)
+print("--------------------")
+for  i in a.values():
+    print(i)
+print("--------------------")
+a['sub']='ML'
+print(a)
+print("--------------------")
+a['name']='Virat'
+print(a)
