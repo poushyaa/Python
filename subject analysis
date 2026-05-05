@@ -1,0 +1,13 @@
+math=["Raj","Ashok","Rose","Rock","Ram"]
+politics=["Anu","Arun","Ram","Akila","Ashok"]
+science=["Simran","Rock","Sam","Suresh","Ashok"]
+m=set(math)
+p=set(politics)
+s=set(science)
+print("three subjects: ",list(m&p&s))
+x=((m&p)|(p&s)|(m&s))-(m&p&s)
+print("two subjects: ",list(x))
+mp=m-p
+ps=p-s
+ms=m-s
+print("one subject: ",(mp|ps|ms)-(x))
