@@ -1,0 +1,21 @@
+class India:
+    def show_info(self):
+        print("Delhi")
+class Telangana(India):
+    def language(self):
+        print("Telugu")
+class AndhraPradesh(Telangana):
+    def cm(self):
+        print("Chandrababu Naidu")
+
+a=India()
+a.show_info()
+b=Telangana()
+b.language()
+c=AndhraPradesh()
+c.cm()
+#a.language or a.cm  gives an error because the class India is not accessing the elements from
+# Telangana and AndhraPradesh and it is the grand parent class(parent to class Telangana and grandparent to class Andhrapradesh
+b.show_info()
+c.show_info()
+c.language()
