@@ -1,0 +1,5 @@
+from tabulate import tabulate
+title=["Hero","Heroine","Movie"]
+data=[["Prabhas","Kajal","Darling"],["JrNTR","Tamannah","Oosaravelli"],["Akhil","Nidhi","Mr.Majnu"]]
+res=tabulate(data,headers=title,tablefmt="fancy")
+print(res)
