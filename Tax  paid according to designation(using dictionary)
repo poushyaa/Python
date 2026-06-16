@@ -1,0 +1,7 @@
+name=input("enter emp name:")
+sal=int(input("Enter salary:"))
+desig=input("Enter position: ")
+tax_percent={'TL':10,'Manager':20,'Fresher':5,'Developer':15}
+tax=sal*(tax_percent[desig]/100)
+
+print("{} has to pay tax of {}".format(name,tax))
