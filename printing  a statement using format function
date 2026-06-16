@@ -1,0 +1,6 @@
+a=10
+b="vijay"
+c="CSE"
+print("Mr {} doing {} and {} is lucky num".format(b,c,a))
+
+
