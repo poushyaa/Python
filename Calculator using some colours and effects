@@ -1,0 +1,153 @@
+
+from tkinter import *
+import random
+
+# ---------------- WINDOW ----------------
+a = Tk()
+a.geometry("400x520")
+a.title("Modern Calculator")
+a.config(bg="#1f1f1f")   # dark background
+
+# ---------------- ENTRY ----------------
+x = Entry(
+    a,
+    width=18,
+    font=("Arial", 28, "bold"),
+    bd=6,
+    relief=RIDGE,
+    justify=RIGHT,
+    bg="#2d2d2d",
+    fg="white",
+    insertbackground="white"
+)
+x.grid(row=0, column=0, columnspan=4, pady=20, padx=10, ipady=12)
+
+# ---------------- FUNCTIONS ----------------
+def click(num):
+    curr = x.get()
+    x.delete(0, END)
+    x.insert(END, str(curr) + str(num))
+
+def clear():
+    x.delete(0, END)
+
+# -------- SCROLLING EFFECT --------
+def scrolling_text(text, i=0):
+
+    if i <= len(text):
+        x.delete(0, END)
+        x.insert(0, text[:i])
+
+        a.after(50, lambda: scrolling_text(text, i + 1))
+
+# -------- ROLLING DIGITS EFFECT --------
+def rolling_digits(final_result, count=0):
+
+    if count < 12:
+
+        fake = ""
+
+        for ch in final_result:
+
+            if ch.isdigit():
+                fake += str(random.randint(0, 9))
+            else:
+                fake += ch
+
+        x.delete(0, END)
+        x.insert(0, fake)
+
+        a.after(70, lambda: rolling_digits(final_result, count + 1))
+
+    else:
+        scrolling_text(final_result)
+
+# -------- EQUAL FUNCTION --------
+def equal():
+
+    try:
+        result = str(eval(x.get()))
+        rolling_digits(result)
+
+    except:
+        x.delete(0, END)
+        x.insert(0, "Error")
+
+# ---------------- BUTTON STYLES ----------------
+btn_num = {
+    "font": ("Arial", 16, "bold"),
+    "width": 7,
+    "height": 3,
+    "bg": "#3498db",     # blue
+    "fg": "white",
+    "activebackground": "#5dade2",
+    "bd": 2
+}
+
+btn_op = {
+    "font": ("Arial", 16, "bold"),
+    "width": 7,
+    "height": 3,
+    "bg": "#e67e22",     # orange
+    "fg": "white",
+    "activebackground": "#f39c12",
+    "bd": 2
+}
+
+# ---------------- BUTTONS ----------------
+Button(a, text="1", command=lambda: click(1), **btn_num).grid(row=1, column=0, padx=3, pady=3)
+Button(a, text="2", command=lambda: click(2), **btn_num).grid(row=1, column=1, padx=3, pady=3)
+Button(a, text="3", command=lambda: click(3), **btn_num).grid(row=1, column=2, padx=3, pady=3)
+Button(a, text="+", command=lambda: click("+"), **btn_op).grid(row=1, column=3, padx=3, pady=3)
+
+Button(a, text="4", command=lambda: click(4), **btn_num).grid(row=2, column=0, padx=3, pady=3)
+Button(a, text="5", command=lambda: click(5), **btn_num).grid(row=2, column=1, padx=3, pady=3)
+Button(a, text="6", command=lambda: click(6), **btn_num).grid(row=2, column=2, padx=3, pady=3)
+Button(a, text="-", command=lambda: click("-"), **btn_op).grid(row=2, column=3, padx=3, pady=3)
+
+Button(a, text="7", command=lambda: click(7), **btn_num).grid(row=3, column=0, padx=3, pady=3)
+Button(a, text="8", command=lambda: click(8), **btn_num).grid(row=3, column=1, padx=3, pady=3)
+Button(a, text="9", command=lambda: click(9), **btn_num).grid(row=3, column=2, padx=3, pady=3)
+Button(a, text="*", command=lambda: click("*"), **btn_op).grid(row=3, column=3, padx=3, pady=3)
+
+Button(
+    a,
+    text="C",
+    command=clear,
+    font=("Arial", 16, "bold"),
+    width=7,
+    height=3,
+    bg="#e74c3c",      # red
+    fg="white",
+    activebackground="#ff6b61",
+    bd=2
+).grid(row=4, column=0, padx=3, pady=3)
+
+Button(a, text="0", command=lambda: click(0), **btn_num).grid(row=4, column=1, padx=3, pady=3)
+
+Button(
+    a,
+    text="=",
+    command=equal,
+    font=("Arial", 16, "bold"),
+    width=7,
+    height=3,
+    bg="#27ae60",      # green
+    fg="white",
+    activebackground="#58d68d",
+    bd=2
+).grid(row=4, column=2, padx=3, pady=3)
+
+Button(a, text="/", command=lambda: click("/"), **btn_op).grid(row=4, column=3, padx=3, pady=3)
+
+# ---------------- FOOTER ----------------
+Label(
+    a,
+    text="Animated Calculator",
+    font=("Arial", 11, "bold"),
+    bg="#1f1f1f",
+    fg="white"
+).grid(row=5, column=0, columnspan=4, pady=12)
+
+a.mainloop()
+
