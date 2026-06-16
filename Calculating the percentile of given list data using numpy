@@ -1,0 +1,5 @@
+import numpy as np
+a=[20,21,33,7,8,9,22,50,45,66]
+res=np.percentile(a,100)   #percentile refers to the rank among data.
+# i.e. how many members are behind you and what is your position .
+print(res)
